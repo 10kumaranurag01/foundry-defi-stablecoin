@@ -268,7 +268,6 @@ contract DSCEngineTest is Test {
         // Act
         int256 ethUsdUpdatedPrice = 9e8; // 1 ETH = $9
         MockV3Aggregator(ethUsdPriceFeed).updateAnswer(ethUsdUpdatedPrice);
-        console.log("Health Factor:", mockDsce.getHealthFactor(USER));
 
         // Act / Assert
         vm.expectRevert(DSCEngine.DCSEngine__HealthFactorNotImproved.selector);
